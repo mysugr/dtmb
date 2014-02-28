@@ -7,7 +7,7 @@ var OPENING = 144;
 
 // Load in Clay.io API
 var Clay = Clay || {};
-Clay.gameKey = "dtmb";
+Clay.gameKey = "mysugr";
 Clay.readyFunctions = [];
 Clay.ready = function( fn ) {
     Clay.readyFunctions.push( fn );
@@ -31,9 +31,6 @@ Clay.ready = function( fn ) {
     clay.src = "http://cdn.clay.io/api.js"; 
     var tag = document.getElementsByTagName("script")[0]; tag.parentNode.insertBefore(clay, tag);
 } )();
-
-if(typeof cards !== 'undefined' && cards.kik)
-    window.location.href = 'card://flirtybird.clay.io';
 
 function main() {
 
@@ -65,7 +62,7 @@ function clayLoaded() {
         ]
     };
     Clay.UI.Menu.init(options);
-    leaderboard = new Clay.Leaderboard({ id: 2797 });
+    leaderboard = new Clay.Leaderboard({ id: 2935 });
 }
 Clay.ready(clayLoaded);
 
@@ -76,7 +73,7 @@ function showScores() {
 }
 
 function kikThis() {
-    Clay.Kik.post( { message: 'I just scored ' + score + ' in Heavy Bird! Think you can beat my score?', title: 'Heavy Bird!' } );
+    Clay.Kik.post( { message: 'I just scored ' + score + ' in Flappy Monster! Think you can beat my score?', title: 'Flappy Monster!' } );
 }
 
 function postScore() {
@@ -296,7 +293,7 @@ function reset() {
     gameOver = false;
     score = 0;
     credits.renderable = true;
-    scoreText.setText("HEAVY\nBIRD");
+    scoreText.setText("FLAPPY\nMONSTER");
     instText.setText("TOUCH TO\nFLAP WINGS");
     highScoreText.renderable = false;
     postScoreText.renderable = false;
@@ -416,7 +413,7 @@ function addScore(_, inv) {
 
 function setGameOver() {
     gameOver = true;
-    instText.setText("TOUCH BIRD\nTO TRY AGAIN");
+    instText.setText("TOUCH MONSTER\nTO TRY AGAIN");
     instText.renderable = true;
     var hiscore = window.localStorage.getItem('hiscore');
     hiscore = hiscore ? hiscore : score;
