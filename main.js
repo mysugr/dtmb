@@ -77,6 +77,9 @@ function kikThis() {
 }
 
 function postScore() {
+	// DISABLED
+	return;
+
     if( postingScore ) // skip if it's already trying to post the score...
         return;
     postScoreText.setText('...');
@@ -248,7 +251,8 @@ function create() {
             align: 'center'
         }
     );
-    postScoreText.setText("POST\nSCORE!");
+//     postScoreText.setText("POST\nSCORE!"); // SHARING is disabled
+     postScoreText.setText("");
     postScoreText.anchor.setTo(0.5, 0.5);
     postScoreText.renderable = false;
     // So we can have clickable text... we check if the mousedown/touch event is within this rectangle inside flap()
